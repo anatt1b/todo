@@ -4,7 +4,13 @@
 
 li {
   margin-bottom: 8px;
+  text-align: left;
 }
 .delete-button {
   margin-left: 16px;
+}
+
+ul {
+  width: fit-content;
+  margin: 24px auto 0;
 }
