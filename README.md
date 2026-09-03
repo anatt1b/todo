@@ -1,16 +1,56 @@
-# React + Vite
+# Todo-sovellus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Full-stack todo-sovellus, jossa käyttäjä voi luoda tunnuksen, kirjautua sisään ja hallita omia tehtäviään.
 
-Currently, two official plugins are available:
+## Teknologiat
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Frontend:** React, Vite, Axios, React Router
+**Backend:** Node.js, Express, PostgreSQL
+**Autentikointi:** JWT (JSON Web Token), bcrypt
+**Testaus:** Mocha, Chai
 
-## React Compiler
+## Ominaisuudet
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Käyttäjän rekisteröinti ja kirjautuminen
+- Tehtävien listaus, lisäys ja poisto
+- Suojatut reitit token-pohjaisella autentikoinnilla
+- MVC-arkkitehtuuri backendissä (model / controller / router)
 
-## Expanding the ESLint configuration
+## Rakenne
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    todo/
+    ├── src/              Frontend (React)
+    ├── public/           Staattiset tiedostot
+    └── server/           Backend (Express)
+        ├── models/       Tietokantakyselyt
+        ├── controllers/  Sovelluslogiikka
+        ├── routes/       Reitit
+        └── helper/       Apurit (tietokantayhteys, auth, virheluokka)
+
+## Käyttöönotto
+
+Asenna riippuvuudet sekä juuressa (frontend) että server-kansiossa (backend):
+
+    npm install
+    cd server
+    npm install
+
+Luo `server`-kansioon `.env`-tiedosto tietokanta- ja JWT-asetuksille.
+
+Käynnistä backend (server-kansiossa):
+
+    npm run dev
+
+Käynnistä frontend (juuressa):
+
+    npm run dev
+
+## Testaus
+
+Käynnistä palvelin test-tilassa (server-kansiossa):
+
+    npm run start:test
+
+Aja testit toisessa terminaalissa (server-kansiossa):
+
+    npm test
