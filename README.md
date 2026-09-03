@@ -4,9 +4,9 @@ Full-stack todo-sovellus, jossa käyttäjä voi luoda tunnuksen, kirjautua sisä
 
 ## Teknologiat
 **Frontend:** React, Vite, Axios, React Router  
-**Backend:** Node.js, Express, PostgreSQL
-**Autentikointi:** JWT (JSON Web Token), bcrypt
-**Testaus:** Mocha, Chai
+**Backend:** Node.js, Express, PostgreSQL  
+**Autentikointi:** JWT (JSON Web Token), bcrypt  
+**Testaus:** Mocha, Chai  
 
 ## Ominaisuudet
 
